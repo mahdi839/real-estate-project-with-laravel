@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boro Mama · Real Estate Search</title>
+    <title>Boro Mama · Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -72,10 +72,20 @@
         .shimmer:hover::before {
             left: 100%;
         }
+
+        /* Hide scrollbar for slider */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-[#F5F7FF] via-[#FFFBF5] to-[#E6EFFF]">
-    <section id="section" class="px-3 sm:px-10 pt-6 min-h-screen">
+    <!-- Hero section (existing, slightly adjusted) -->
+    <section class="px-3 sm:px-10 pt-6 min-h-screen">
         <!-- Enhanced Header -->
         <header class="glass flex items-center justify-between px-6 py-3 md:py-4 shadow-lg shadow-indigo-100/50 max-w-6xl rounded-full mx-auto w-full border border-white/50">
             <a href="https://prebuiltui.com" class="flex items-center gap-2">
@@ -102,7 +112,7 @@
             </div>
         </header>
 
-        <!-- Enhanced Hero Section -->
+        <!-- Enhanced Hero Section (same as provided, trimmed for brevity but kept core) -->
         <main class="container mx-auto w-full my-8 lg:my-16 px-4">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Column - Content -->
@@ -202,7 +212,7 @@
                     </div>
                 </div>
 
-                <!-- Right Column - Enhanced Image Grid -->
+                <!-- Right Column - Enhanced Image Grid (kept as is) -->
                 <div class="relative lg:block">
                     <!-- Background decoration -->
                     <div class="absolute -top-4 -right-4 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
@@ -259,7 +269,7 @@
                                 <div class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-red-600 border-2 border-white"></div>
                             </div>
                             <div class="text-sm font-semibold text-gray-900">
-                                <span class="text-indigo-600">500+</span> Listed Today
+                                <span class="text-indigo-600">500+</span> Listed Properties
                             </div>
                         </div>
                     </div>
@@ -268,8 +278,41 @@
         </main>
     </section>
 
-    <!-- Mobile menu script -->
+    <!-- ========== NEW SECTION: RECENT PROPERTIES SLIDER ========== -->
+    <section class="py-16 px-3 sm:px-10 bg-gradient-to-b from-transparent to-indigo-50/30">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="flex justify-between items-end mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Recent <span class="gradient-text">Properties</span></h2>
+                <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800 transition-all hover:underline">View All →</a>
+            </div>
+
+            <!-- Slider container with navigation buttons -->
+            <div class="relative">
+                <!-- Cards wrapper (horizontal scroll) -->
+                <div id="propertySlider" class="flex overflow-x-auto gap-6 scroll-smooth snap-x snap-mandatory pb-6 hide-scrollbar">
+                    <!-- Property cards will be injected via JavaScript -->
+                </div>
+
+                <!-- Previous button -->
+                <button id="prevSlide" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous properties">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <!-- Next button -->
+                <button id="nextSlide" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Next properties">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile menu script (existing) + slider initialization -->
     <script>
+        // Mobile menu
         const openMenu = document.getElementById('openMenu');
         const closeMenu = document.getElementById('closeMenu');
         const menu = document.getElementById('menu');
@@ -286,6 +329,201 @@
             menu.classList.add('max-md:w-0');
             section.classList.remove('overflow-hidden');
         });
+
+        // ---------- PROPERTY SLIDER ----------
+        (function() {
+            // Sample property data (in real app, this would come from backend)
+            const properties = [
+                {
+                    id: 1,
+                    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500&auto=format&fit=crop', // apartment building
+                    badge: 'For Sale',
+                    badgeColor: 'from-green-500 to-emerald-600',
+                    name: 'Lakeview Heights',
+                    location: 'Gulshan, Dhaka',
+                    sqft: '1850 sqft',
+                    beds: 3,
+                    baths: 2,
+                },
+                {
+                    id: 2,
+                    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop', // modern living room
+                    badge: 'For Rent',
+                    badgeColor: 'from-orange-500 to-red-500',
+                    name: 'Panorama Residence',
+                    location: 'Banani, Dhaka',
+                    sqft: '1350 sqft',
+                    beds: 2,
+                    baths: 2,
+                },
+                {
+                    id: 3,
+                    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop', // house exterior
+                    badge: 'For Sale',
+                    badgeColor: 'from-green-500 to-emerald-600',
+                    name: 'Green Villa',
+                    location: 'Dhanmondi, Dhaka',
+                    sqft: '2200 sqft',
+                    beds: 4,
+                    baths: 3,
+                },
+                {
+                    id: 4,
+                    image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&auto=format&fit=crop', // interior design
+                    badge: 'For Rent',
+                    badgeColor: 'from-orange-500 to-red-500',
+                    name: 'City Loft',
+                    location: 'Uttara, Dhaka',
+                    sqft: '980 sqft',
+                    beds: 2,
+                    baths: 1,
+                },
+                {
+                    id: 5,
+                    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop', // building facade
+                    badge: 'For Sale',
+                    badgeColor: 'from-green-500 to-emerald-600',
+                    name: 'Sunset Terrace',
+                    location: 'Mohakhali, Dhaka',
+                    sqft: '1650 sqft',
+                    beds: 3,
+                    baths: 2,
+                },
+                {
+                    id: 6,
+                    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&auto=format&fit=crop', // luxury house
+                    badge: 'For Rent',
+                    badgeColor: 'from-orange-500 to-red-500',
+                    name: 'Royal Garden',
+                    location: 'Baridhara, Dhaka',
+                    sqft: '2500 sqft',
+                    beds: 4,
+                    baths: 4,
+                }
+            ];
+
+            const slider = document.getElementById('propertySlider');
+            const prevBtn = document.getElementById('prevSlide');
+            const nextBtn = document.getElementById('nextSlide');
+
+            // Generate cards HTML
+            properties.forEach(prop => {
+                const card = document.createElement('div');
+                card.className = 'w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex-shrink-0 snap-start';
+                card.innerHTML = `
+                    <div class="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="${prop.image}" alt="${prop.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <!-- Badge -->
+                            <div class="absolute top-4 left-4">
+                                <span class="bg-gradient-to-r ${prop.badgeColor} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                                    ${prop.badge}
+                                </span>
+                            </div>
+                            <!-- Favorite icon (optional) -->
+                            <button class="absolute top-4 right-4 w-8 h-8 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold text-xl text-gray-900 mb-1">${prop.name}</h3>
+                            <p class="text-gray-600 text-sm flex items-center gap-1 mb-3">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                ${prop.location}
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-700 border-t border-gray-100 pt-4">
+                                <span class="flex items-center gap-1">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                                        <path d="M8 10h8M8 14h5" />
+                                    </svg>
+                                    ${prop.sqft}
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <path d="M2 16h20M4 12h2M8 12h2M12 12h2M16 12h2M20 12h2" />
+                                        <rect x="4" y="4" width="16" height="12" rx="2" />
+                                    </svg>
+                                    ${prop.beds} beds
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <path d="M2 16h20M4 12h2M8 12h2M12 12h2M16 12h2M20 12h2" />
+                                        <rect x="2" y="4" width="20" height="12" rx="2" />
+                                    </svg>
+                                    ${prop.baths} baths
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                slider.appendChild(card);
+            });
+
+            // Slider navigation logic
+            const cardWidth = () => {
+                if (window.innerWidth >= 1280) return '25%'; // xl: 4 cards
+                if (window.innerWidth >= 1024) return '33.333%'; // lg: 3 cards
+                if (window.innerWidth >= 640) return '50%'; // sm: 2 cards
+                return '100%'; // default: 1 card
+            };
+
+            // Update snap type and scroll amount on resize (optional)
+            const updateScrollAmount = () => {
+                const containerWidth = slider.offsetWidth;
+                const cardWidthPercent = cardWidth();
+                let visibleCards = 1;
+                if (cardWidthPercent === '25%') visibleCards = 4;
+                else if (cardWidthPercent === '33.333%') visibleCards = 3;
+                else if (cardWidthPercent === '50%') visibleCards = 2;
+                return containerWidth * (visibleCards / 4); // not directly used, but we can scroll by one card
+            };
+
+            // Scroll by one card (approx)
+            const scrollNext = () => {
+                const card = slider.querySelector('.flex-shrink-0');
+                if (card) {
+                    const scrollAmount = card.offsetWidth + 24; // 24px gap
+                    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            };
+
+            const scrollPrev = () => {
+                const card = slider.querySelector('.flex-shrink-0');
+                if (card) {
+                    const scrollAmount = card.offsetWidth + 24;
+                    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                }
+            };
+
+            nextBtn.addEventListener('click', scrollNext);
+            prevBtn.addEventListener('click', scrollPrev);
+
+            // Disable buttons at extremes (optional)
+            const checkScrollBounds = () => {
+                if (slider.scrollLeft <= 5) {
+                    prevBtn.disabled = true;
+                } else {
+                    prevBtn.disabled = false;
+                }
+                if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 5) {
+                    nextBtn.disabled = true;
+                } else {
+                    nextBtn.disabled = false;
+                }
+            };
+
+            slider.addEventListener('scroll', checkScrollBounds);
+            window.addEventListener('resize', () => {
+                checkScrollBounds();
+            });
+            setTimeout(checkScrollBounds, 100); // initial check
+        })();
     </script>
 </body>
 </html>
