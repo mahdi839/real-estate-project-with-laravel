@@ -240,13 +240,13 @@
     <section class="py-16 px-4 sm:px-10">
         <div class="max-w-7xl mx-auto">
             <!-- Header - CENTERED on mobile, with proper spacing -->
-            <div class="flex flex-col items-center sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-10">
+            <div class="flex flex-col items-center sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-10 for_rent_main_div">
                 <div class="text-center sm:text-left for_rent_header">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Properties <span class="gradient-text">For
                             Sale</span></h2>
                     <p class="text-gray-600 mt-2">Discover your dream property from our premium listings</p>
                 </div>
-                <a href="#"
+                <a id="for_rent_view" href="#"
                     class="text-indigo-600 font-medium hover:text-indigo-800 transition-all hover:underline flex items-center gap-1 mt-3 sm:mt-0">
                     View All <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2">
@@ -370,7 +370,7 @@
     </section>
 
     <!-- ========== WHY CHOOSE MY SWEETS HOME SECTION ========== -->
-    <section class="relative py-24 px-4 sm:px-10 overflow-hidden">
+    <section id="why_choos_section" class="relative py-24 px-4 sm:px-10 overflow-hidden">
         <div class="absolute inset-0 z-0"><img
                 src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&auto=format&fit=crop"
                 alt="Modern building" class="w-full h-full object-cover opacity-10">
@@ -391,8 +391,10 @@
                     platform. We're your trusted partner in finding the perfect property that matches your dreams and
                     budget.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> <!-- Feature 1 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> 
+                <!-- Feature 1 -->
                 <div
+                   id="feature_1"
                     class="glass rounded-3xl p-8 border border-white/50 hover:shadow-2xl transition-all duration-300 group">
                     <div
                         class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
@@ -412,6 +414,7 @@
 
                 <!-- Feature 2 -->
                 <div
+                        id="feature_2"
                     class="glass rounded-3xl p-8 border border-white/50 hover:shadow-2xl transition-all duration-300 group">
                     <div
                         class="w-14 h-14 bg-gradient-to-br from-pink-500 to-red-600 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
@@ -428,6 +431,7 @@
 
                 <!-- Feature 3 -->
                 <div
+                     id="feature_3"
                     class="glass rounded-3xl p-8 border border-white/50 hover:shadow-2xl transition-all duration-300 group">
                     <div
                         class="w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
