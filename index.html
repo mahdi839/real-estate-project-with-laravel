@@ -3,152 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>My Sweets Home · Real Estate</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Gradient text animation */
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #4F46E5, #7C3AED, #EC4899, #4F46E5);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient 4s ease infinite;
-        }
-
-        /* Floating animation for images */
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .float-1 {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .float-2 {
-            animation: float 5s ease-in-out infinite 0.5s;
-        }
-
-        .float-3 {
-            animation: float 7s ease-in-out infinite 1s;
-        }
-
-        /* Glassmorphism effect */
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        /* Custom select - FIXED: removed appearance to hide default arrow */
-        select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%234B5563' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            padding-right: 2.5rem;
-        }
-
-        /* Shimmer effect on hover */
-        .shimmer {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .shimmer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .shimmer:hover::before {
-            left: 100%;
-        }
-
-        /* Hide scrollbar for slider */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Marquee animation for testimonials */
-        @keyframes marqueeScroll {
-            0% {
-                transform: translateX(0%);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .marquee-inner {
-            animation: marqueeScroll 25s linear infinite;
-        }
-
-        .marquee-reverse {
-            animation-direction: reverse;
-        }
-    </style>
+   
 </head>
 
-<body class="bg-gradient-to-br from-[#F5F7FF] via-[#FFFBF5] to-[#E6EFFF]">
+<body class="bg-gradient-to-br from-[#F5F7FF] via-[#FFFBF5] to-[#E6EFFF] overflow-x-hidden">
+
     <!-- Hero section -->
-    <section id="section" class="px-3 sm:px-10 pt-6 min-h-screen">
-        <!-- Enhanced Header -->
+    <section id="section" class="px-4 sm:px-10 pt-6 min-h-screen">
+        <!-- Enhanced Header with text logo -->
         <header
             class="glass flex items-center justify-between px-6 py-3 md:py-4 shadow-lg shadow-indigo-100/50 max-w-6xl rounded-full mx-auto w-full border border-white/50">
             <a href="#" class="flex items-center gap-2">
-                <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/prebuiltuiDummyLogo.svg"
-                    alt="logo" class="h-8" />
+                <!-- REPLACED logo image with text logo -->
+                <span
+                    class="text-xl md:text-2xl font-bold bg-gradient-to-r from-indigo-700 to-purple-700 bg-clip-text text-transparent">My
+                    Sweet Home</span>
             </a>
             <nav id="menu"
                 class="max-md:absolute max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-full max-md:w-0 transition-[width] glass max-md:backdrop-blur-xl flex-col md:flex-row flex gap-8 text-gray-700 text-sm font-medium">
-                <a class="hover:text-indigo-600 transition-colors" href="#">Properties</a>
-                <a class="hover:text-indigo-600 transition-colors" href="#">For Sale</a>
-                <a class="hover:text-indigo-600 transition-colors" href="#">For Rent</a>
+                <a class="hover:text-indigo-600 transition-colors" href="#">Home</a>
+                <a class="hover:text-indigo-600 transition-colors" href="#">About Us</a>
+                 <a class="hover:text-indigo-600 transition-colors" href="#">Properties</a>
                 <a class="hover:text-indigo-600 transition-colors" href="#">Materials</a>
-                <a class="hover:text-indigo-600 transition-colors" href="#">Contact</a>
+                <a class="hover:text-indigo-600 transition-colors" href="#">Sell Your Property</a>
                 <button id="closeMenu" class="md:hidden text-gray-600 hover:text-gray-900">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M6 18L18 6M6 6l12 12" />
@@ -157,7 +38,7 @@
             </nav>
             <div class="flex items-center space-x-3">
                 <a class="hidden md:flex bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-indigo-300/50 transition-all duration-300 shimmer"
-                    href="#">Get Started</a>
+                    href="#">Contact Us</a>
                 <button id="openMenu" class="md:hidden text-gray-600 hover:text-gray-900">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M4 6h16M4 12h16M4 18h16" />
@@ -167,48 +48,40 @@
         </header>
 
         <!-- Enhanced Hero Section -->
-        <main class="container mx-auto w-full my-8 lg:my-16 px-4">
+        <main class="container mx-auto w-full my-8 lg:my-16 px-0">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Column - Content -->
                 <div class="flex flex-col items-start text-left space-y-6 lg:pr-8">
-                    <!-- Premium Badge -->
+                    <!-- Premium Badge (unchanged) -->
                     <div
                         class="inline-flex items-center gap-2 glass border border-indigo-200 rounded-full px-4 py-2 hover:shadow-md transition-all duration-300">
-                        <span class="flex h-2 w-2 relative">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
-                        </span>
+                        <span class="flex h-2 w-2 relative"><span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span><span
+                                class="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span></span>
                         <span class="text-sm font-medium text-indigo-700">Trusted by 50,000+ Clients</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
 
                     <!-- Hero Heading -->
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                        Find Your
-                        <span class="gradient-text block mt-2">Dream Property</span>
-                        in Bangladesh
-                    </h1>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">Find Your <span
+                            class="gradient-text block mt-2">Dream Property</span></h1>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-xl">Discover the finest residential and
+                        commercial properties across Dhaka. Your perfect space awaits with our curated listings.</p>
 
-                    <!-- Subheading -->
-                    <p class="text-lg text-gray-600 leading-relaxed max-w-xl">
-                        Discover the finest residential and commercial properties across Dhaka. Your perfect space
-                        awaits with our curated listings.
-                    </p>
-
-                    <!-- Enhanced Search Bar -->
+                    <!-- Enhanced Search Bar - FIXED mobile gaps & bottom spacing -->
                     <div class="w-full max-w-2xl">
                         <div class="glass rounded-2xl shadow-xl shadow-indigo-100/50 border border-white/50 p-2 sm:p-3">
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <!-- on mobile stacked selects have extra bottom gap removed via last-child selector? we use grid gap, it's fine. ensure no extra margin at bottom of container -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-2">
                                 <!-- Location -->
                                 <div class="relative group">
                                     <label
                                         class="absolute -top-2 left-4 bg-white px-2 text-xs font-semibold text-indigo-600 z-10">Location</label>
                                     <select
-                                        class="w-full px-4 py-4 bg-white rounded-xl border-2 border-gray-100 text-sm text-gray-700 font-medium focus:outline-none focus:border-indigo-500 transition-all cursor-pointer hover:border-indigo-300">
+                                        class="w-full px-4 py-3 sm:py-4 bg-white rounded-xl border-2 border-gray-100 text-sm text-gray-700 font-medium focus:outline-none focus:border-indigo-500 transition-all cursor-pointer hover:border-indigo-300">
                                         <option value="">Select area</option>
                                         <option value="dhanmondi">Dhanmondi</option>
                                         <option value="gulshan">Gulshan</option>
@@ -218,13 +91,12 @@
                                         <option value="mirpur">Mirpur</option>
                                     </select>
                                 </div>
-
                                 <!-- Property Type -->
                                 <div class="relative group">
                                     <label
                                         class="absolute -top-2 left-4 bg-white px-2 text-xs font-semibold text-indigo-600 z-10">Type</label>
                                     <select
-                                        class="w-full px-4 py-4 bg-white rounded-xl border-2 border-gray-100 text-sm text-gray-700 font-medium focus:outline-none focus:border-indigo-500 transition-all cursor-pointer hover:border-indigo-300">
+                                        class="w-full px-4 py-3 sm:py-4 bg-white rounded-xl border-2 border-gray-100 text-sm text-gray-700 font-medium focus:outline-none focus:border-indigo-500 transition-all cursor-pointer hover:border-indigo-300">
                                         <option value="">Property type</option>
                                         <option value="apartment">Apartment</option>
                                         <option value="house">House</option>
@@ -233,13 +105,12 @@
                                         <option value="land">Land</option>
                                     </select>
                                 </div>
-
                                 <!-- Status -->
                                 <div class="relative group">
                                     <label
                                         class="absolute -top-2 left-4 bg-white px-2 text-xs font-semibold text-indigo-600 z-10">Status</label>
                                     <select
-                                        class="w-full px-4 py-4 bg-white rounded-xl border-2 border-gray-100 text-sm text-gray-700 font-medium focus:outline-none focus:border-indigo-500 transition-all cursor-pointer hover:border-indigo-300">
+                                        class="w-full px-4 py-3 sm:py-4 bg-white rounded-xl border-2 border-gray-100 text-sm text-gray-700 font-medium focus:outline-none focus:border-indigo-500 transition-all cursor-pointer hover:border-indigo-300">
                                         <option value="">Any status</option>
                                         <option value="sale">For Sale</option>
                                         <option value="rent">For Rent</option>
@@ -247,8 +118,7 @@
                                     </select>
                                 </div>
                             </div>
-
-                            <!-- Search Button -->
+                            <!-- Search Button - mt-3 is fine, no extra bottom space -->
                             <button
                                 class="w-full mt-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-4 rounded-xl text-base font-semibold hover:shadow-lg hover:shadow-indigo-400/50 transition-all duration-300 flex items-center justify-center gap-3 shimmer group">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -260,9 +130,8 @@
                                 <span>Search Properties</span>
                             </button>
                         </div>
-
-                        <!-- Quick Stats -->
-                        <div class="grid grid-cols-3 gap-4 mt-6">
+                        <!-- Quick Stats - adjusted top margin on mobile -->
+                        <div class="grid grid-cols-3 gap-4 mt-5 sm:mt-6">
                             <div class="text-center">
                                 <div class="text-2xl font-bold text-gray-900">5000+</div>
                                 <div class="text-xs text-gray-600 mt-1">Properties</div>
@@ -279,16 +148,16 @@
                     </div>
                 </div>
 
-                <!-- Right Column - Enhanced Image Grid -->
+                <!-- Right Column - Enhanced Image Grid with RESPONSIVE badge & container height -->
                 <div class="relative lg:block">
-                    <!-- Background decoration -->
                     <div
                         class="absolute -top-4 -right-4 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse">
                     </div>
                     <div class="absolute -bottom-8 -left-4 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"
-                        style="animation-delay: 2s;"></div>
+                        style="animation-delay:2s;"></div>
 
-                    <div class="relative grid grid-cols-2 gap-4 h-[550px]">
+                    <!-- Adjusted height for mobile -->
+                    <div class="relative grid grid-cols-2 gap-4 h-[400px] sm:h-[550px]">
                         <!-- Large image -->
                         <div class="col-span-1 row-span-2 float-1">
                             <div class="relative h-full group overflow-hidden rounded-3xl shadow-2xl">
@@ -307,7 +176,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Top right image -->
                         <div class="float-2">
                             <div class="relative h-full group overflow-hidden rounded-3xl shadow-xl">
@@ -326,7 +194,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Bottom right image -->
                         <div class="float-3">
                             <div class="relative h-full group overflow-hidden rounded-3xl shadow-xl">
@@ -346,23 +213,22 @@
                             </div>
                         </div>
 
-                        <!-- Floating badge -->
+                        <!-- Floating badge - RESIZED for mobile: smaller, adjusted position -->
                         <div
-                            class="absolute -bottom-6 left-1/2 -translate-x-1/2 glass rounded-full px-6 py-3 shadow-xl border border-white/50 flex items-center gap-3 z-10">
+                            class="absolute -bottom-4 sm:-bottom-6 left-1/2 -translate-x-1/2 glass rounded-full px-4 sm:px-6 py-2 sm:py-3 shadow-xl border border-white/50 flex items-center gap-2 sm:gap-3 z-10">
                             <div class="flex -space-x-2">
                                 <div
-                                    class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 border-2 border-white">
+                                    class="w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-600 border-2 border-white">
                                 </div>
                                 <div
-                                    class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-600 border-2 border-white">
+                                    class="w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-600 border-2 border-white">
                                 </div>
                                 <div
-                                    class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-red-600 border-2 border-white">
+                                    class="w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-gradient-to-br from-pink-400 to-red-600 border-2 border-white">
                                 </div>
                             </div>
-                            <div class="text-sm font-semibold text-gray-900">
-                                <span class="text-indigo-600">500+</span> Listed Properties
-                            </div>
+                            <div class="text-xs sm:text-sm font-semibold text-gray-900"><span
+                                    class="text-indigo-600">500+</span> Listed Properties</div>
                         </div>
                     </div>
                 </div>
@@ -371,91 +237,83 @@
     </section>
 
     <!-- ========== FOR SALE PROPERTIES SLIDER ========== -->
-    <section class="py-16 px-3 sm:px-10">
+    <section class="py-16 px-4 sm:px-10">
         <div class="max-w-7xl mx-auto">
-            <!-- Header -->
-            <div class="flex justify-between items-end mb-10">
-                <div>
+            <!-- Header - CENTERED on mobile, with proper spacing -->
+            <div class="flex flex-col items-center sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-10">
+                <div class="text-center sm:text-left">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Properties <span class="gradient-text">For
                             Sale</span></h2>
                     <p class="text-gray-600 mt-2">Discover your dream property from our premium listings</p>
                 </div>
                 <a href="#"
-                    class="text-indigo-600 font-medium hover:text-indigo-800 transition-all hover:underline flex items-center gap-1">
-                    View All
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    class="text-indigo-600 font-medium hover:text-indigo-800 transition-all hover:underline flex items-center gap-1 mt-3 sm:mt-0">
+                    View All <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </a>
             </div>
 
-            <!-- Slider container with navigation buttons -->
+            <!-- Slider container with more side padding on mobile -->
             <div class="relative">
                 <div id="saleSlider"
-                    class="flex overflow-x-auto gap-6 scroll-smooth snap-x snap-mandatory pb-6 hide-scrollbar"></div>
+                    class="flex overflow-x-auto gap-4 sm:gap-6 scroll-smooth snap-x snap-mandatory pb-6 hide-scrollbar px-1">
+                </div>
                 <button id="prevSale"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed"><svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+                    </svg></button>
                 <button id="nextSale"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed"><svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+                    </svg></button>
             </div>
         </div>
     </section>
 
     <!-- ========== FOR RENT PROPERTIES SLIDER ========== -->
-    <section class="py-16 px-3 sm:px-10">
+    <section class="py-16 px-4 sm:px-10">
         <div class="max-w-7xl mx-auto">
-            <!-- Header -->
-            <div class="flex justify-between items-end mb-10">
-                <div>
+            <!-- Header - CENTERED on mobile -->
+            <div class="flex flex-col items-center sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-10">
+                <div class="text-center sm:text-left">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Properties <span class="gradient-text">For
                             Rent</span></h2>
                     <p class="text-gray-600 mt-2">Find the perfect rental property for your needs</p>
                 </div>
                 <a href="#"
-                    class="text-indigo-600 font-medium hover:text-indigo-800 transition-all hover:underline flex items-center gap-1">
-                    View All
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    class="text-indigo-600 font-medium hover:text-indigo-800 transition-all hover:underline flex items-center gap-1 mt-3 sm:mt-0">
+                    View All <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </a>
             </div>
 
-            <!-- Slider container with navigation buttons -->
             <div class="relative">
                 <div id="rentSlider"
-                    class="flex overflow-x-auto gap-6 scroll-smooth snap-x snap-mandatory pb-6 hide-scrollbar"></div>
+                    class="flex overflow-x-auto gap-4 sm:gap-6 scroll-smooth snap-x snap-mandatory pb-6 hide-scrollbar px-1">
+                </div>
                 <button id="prevRent"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
+                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed"><svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+                    </svg></button>
                 <button id="nextRent"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
+                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-100 transition-all z-10 text-indigo-600 hover:text-indigo-800 disabled:opacity-50 disabled:cursor-not-allowed"><svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+                    </svg></button>
             </div>
         </div>
     </section>
 
     <!-- ========== BUILDING MATERIALS SECTION ========== -->
-    <section class="py-16 px-3 sm:px-10">
+    <section class="py-16 px-4 sm:px-10">
         <div class="max-w-7xl mx-auto">
-            <!-- Header -->
             <div class="text-center mb-12">
                 <div class="inline-flex items-center gap-2 glass border border-indigo-200 rounded-full px-5 py-2 mb-6">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -466,19 +324,17 @@
                     </svg>
                     <span class="text-sm font-semibold text-indigo-700">Quality Materials</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                    Building <span class="gradient-text">Materials</span>
-                </h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Building <span
+                        class="gradient-text">Materials</span></h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Premium construction materials for your dream project</p>
             </div>
-
-            <!-- Materials Grid -->
+            <!-- Materials Grid - added side padding on mobile via container, but inner cards get default margin -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="materialsGrid"></div>
         </div>
     </section>
 
-    <!-- ========== TESTIMONIALS SECTION ========== -->
-    <section class="py-16 px-3 sm:px-10 overflow-hidden">
+    <!-- ========== TESTIMONIALS SECTION (unchanged, but container has px-4) ========== -->
+    <section class="py-16 px-4 sm:px-10 overflow-hidden">
         <div class="max-w-7xl mx-auto mb-12 text-center">
             <div class="inline-flex items-center gap-2 glass border border-indigo-200 rounded-full px-5 py-2 mb-6">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -488,14 +344,11 @@
                 </svg>
                 <span class="text-sm font-semibold text-indigo-700">Testimonials</span>
             </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                What Our <span class="gradient-text">Clients Say</span>
-            </h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">What Our <span class="gradient-text">Clients
+                    Say</span></h2>
             <p class="text-gray-600 max-w-2xl mx-auto">Real stories from real people who found their dream homes with us
             </p>
         </div>
-
-        <!-- Marquee Row 1 -->
         <div class="marquee-row w-full mx-auto max-w-7xl overflow-hidden relative mb-6">
             <div
                 class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-[#F5F7FF] to-transparent">
@@ -505,8 +358,6 @@
                 class="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-l from-[#E6EFFF] to-transparent">
             </div>
         </div>
-
-        <!-- Marquee Row 2 -->
         <div class="marquee-row w-full mx-auto max-w-7xl overflow-hidden relative">
             <div
                 class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-[#F5F7FF] to-transparent">
@@ -519,15 +370,12 @@
     </section>
 
     <!-- ========== WHY CHOOSE MY SWEETS HOME SECTION ========== -->
-    <section class="relative py-24 px-3 sm:px-10 overflow-hidden">
-        <!-- Background overlay image -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&auto=format&fit=crop"
+    <section class="relative py-24 px-4 sm:px-10 overflow-hidden">
+        <div class="absolute inset-0 z-0"><img
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&auto=format&fit=crop"
                 alt="Modern building" class="w-full h-full object-cover opacity-10">
             <div class="absolute inset-0 bg-gradient-to-br from-indigo-50/95 via-purple-50/90 to-pink-50/95"></div>
         </div>
-
-        <!-- Content -->
         <div class="relative z-10 max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 glass border border-indigo-200 rounded-full px-5 py-2 mb-6">
@@ -535,22 +383,15 @@
                         <path
                             d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
                             stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <span class="text-sm font-semibold text-indigo-700">Why Choose Us</span>
+                    </svg><span class="text-sm font-semibold text-indigo-700">Why Choose Us</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    Why Choose <span class="gradient-text">My Sweets Home</span>
-                </h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    We're not just another real estate platform. We're your trusted partner in finding the perfect
-                    property
-                    that matches your dreams and budget.
-                </p>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Why Choose <span class="gradient-text">My
+                        Sweets Home</span></h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">We're not just another real estate
+                    platform. We're your trusted partner in finding the perfect property that matches your dreams and
+                    budget.</p>
             </div>
-
-            <!-- Feature grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> <!-- Feature 1 -->
                 <div
                     class="glass rounded-3xl p-8 border border-white/50 hover:shadow-2xl transition-all duration-300 group">
                     <div
@@ -604,43 +445,39 @@
         </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="bg-gradient-to-b from-gray-900 to-gray-800 text-white pt-16 pb-8 px-3 sm:px-10">
+    <!-- ========== FOOTER - MOBILE CENTERED + BORDERS ========== -->
+    <footer class="bg-gradient-to-b from-gray-900 to-gray-800 text-white pt-16 pb-8 px-4 sm:px-10">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <!-- Company Info -->
-                <div>
-                    <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/prebuiltuiDummyLogo.svg"
-                        alt="logo" class="h-10 mb-4 brightness-0 invert" />
+            <!-- Grid: on mobile each column centered, with border bottom -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
+                <!-- Company Info - centered on mobile -->
+                <div class="text-center sm:text-left border-b border-gray-700 pb-6 md:border-b-0 md:pb-0">
+                    <span class="text-2xl font-bold text-white inline-block mb-4">My Sweet Home</span>
                     <p class="text-gray-400 mb-4 leading-relaxed">Your trusted partner in finding the perfect property
                         in Bangladesh. Quality homes, transparent deals.</p>
-                    <div class="flex gap-3">
+                    <div class="flex gap-3 justify-center sm:justify-start">
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-white/10 hover:bg-indigo-600 flex items-center justify-center transition-all">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            class="w-10 h-10 rounded-full bg-white/10 hover:bg-indigo-600 flex items-center justify-center transition-all"><svg
+                                width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
+                            </svg></a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-white/10 hover:bg-indigo-600 flex items-center justify-center transition-all">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            class="w-10 h-10 rounded-full bg-white/10 hover:bg-indigo-600 flex items-center justify-center transition-all"><svg
+                                width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                            </svg>
-                        </a>
+                            </svg></a>
                         <a href="#"
-                            class="w-10 h-10 rounded-full bg-white/10 hover:bg-indigo-600 flex items-center justify-center transition-all">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            class="w-10 h-10 rounded-full bg-white/10 hover:bg-indigo-600 flex items-center justify-center transition-all"><svg
+                                width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
+                            </svg></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
-                <div>
+                <!-- Quick Links - centered on mobile with border -->
+                <div class="text-center sm:text-left border-b border-gray-700 pb-6 md:border-b-0 md:pb-0">
                     <h3 class="font-bold text-lg mb-4">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
@@ -653,9 +490,8 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
-
-                <!-- Services -->
-                <div>
+                <!-- Services - centered on mobile with border -->
+                <div class="text-center sm:text-left border-b border-gray-700 pb-6 md:border-b-0 md:pb-0">
                     <h3 class="font-bold text-lg mb-4">Services</h3>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Buy Property</a></li>
@@ -667,403 +503,63 @@
                                 Materials</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact -->
-                <div>
+                <!-- Contact - centered on mobile, no bottom border on last -->
+                <div class="text-center sm:text-left">
                     <h3 class="font-bold text-lg mb-4">Contact Info</h3>
                     <ul class="space-y-3">
-                        <li class="flex items-start gap-2 text-gray-400">
-                            <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                        <li class="flex items-start gap-2 text-gray-400 justify-center sm:justify-start"><svg
+                                class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            <span>123 Gulshan Avenue, Dhaka 1212, Bangladesh</span>
-                        </li>
-                        <li class="flex items-center gap-2 text-gray-400">
-                            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            </svg><span>123 Gulshan Avenue, Dhaka 1212, Bangladesh</span></li>
+                        <li class="flex items-center gap-2 text-gray-400 justify-center sm:justify-start"><svg
+                                class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                            <span>+880 1234-567890</span>
-                        </li>
-                        <li class="flex items-center gap-2 text-gray-400">
-                            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            </svg><span>+880 1234-567890</span></li>
+                        <li class="flex items-center gap-2 text-gray-400 justify-center sm:justify-start"><svg
+                                class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <span>info@mysweetshome.com</span>
-                        </li>
+                            </svg><span>info@mysweetshome.com</span></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Bottom Bar -->
+            <!-- Bottom Bar (centered on mobile) -->
             <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-400 text-sm text-center md:text-left">
-                    © 2025 My Sweets Home. All rights reserved.
+                <p class="text-gray-400 text-sm text-center md:text-left">© 2025 My Sweets Home. All rights reserved.
                 </p>
-                <div class="flex gap-6 text-sm">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
-                </div>
+                <div class="flex gap-6 text-sm"><a href="#"
+                        class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a><a href="#"
+                        class="text-gray-400 hover:text-white transition-colors">Terms of Service</a><a href="#"
+                        class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a></div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts (same, but added responsive classes already applied) -->
     <script>
         // Mobile menu
         const openMenu = document.getElementById('openMenu');
         const closeMenu = document.getElementById('closeMenu');
         const menu = document.getElementById('menu');
         const section = document.getElementById('section');
+        openMenu.addEventListener('click', () => { menu.classList.remove('max-md:w-0'); menu.classList.add('max-md:w-full'); section.classList.add('overflow-hidden'); });
+        closeMenu.addEventListener('click', () => { menu.classList.remove('max-md:w-full'); menu.classList.add('max-md:w-0'); section.classList.remove('overflow-hidden'); });
 
-        openMenu.addEventListener('click', () => {
-            menu.classList.remove('max-md:w-0');
-            menu.classList.add('max-md:w-full');
-            section.classList.add('overflow-hidden');
-        });
+        const saleProperties = [{ id: 1, image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500&auto=format&fit=crop', name: 'Lakeview Heights', location: 'Gulshan, Dhaka', sqft: '1850 sqft', beds: 3, baths: 2 }, { id: 2, image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop', name: 'Green Villa', location: 'Dhanmondi, Dhaka', sqft: '2200 sqft', beds: 4, baths: 3 }, { id: 3, image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop', name: 'Sunset Terrace', location: 'Mohakhali, Dhaka', sqft: '1650 sqft', beds: 3, baths: 2 }, { id: 4, image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&auto=format&fit=crop', name: 'Urban Heights', location: 'Uttara, Dhaka', sqft: '1950 sqft', beds: 3, baths: 3 }, { id: 5, image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&auto=format&fit=crop', name: 'Skyline Residency', location: 'Banani, Dhaka', sqft: '2100 sqft', beds: 4, baths: 3 }];
+        const rentProperties = [{ id: 1, image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop', name: 'Panorama Residence', location: 'Banani, Dhaka', sqft: '1350 sqft', beds: 2, baths: 2 }, { id: 2, image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&auto=format&fit=crop', name: 'City Loft', location: 'Uttara, Dhaka', sqft: '980 sqft', beds: 2, baths: 1 }, { id: 3, image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&auto=format&fit=crop', name: 'Royal Garden', location: 'Baridhara, Dhaka', sqft: '2500 sqft', beds: 4, baths: 4 }, { id: 4, image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&auto=format&fit=crop', name: 'Modern Living', location: 'Gulshan, Dhaka', sqft: '1200 sqft', beds: 2, baths: 2 }, { id: 5, image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=500&auto=format&fit=crop', name: 'Lake View Apartment', location: 'Dhanmondi, Dhaka', sqft: '1450 sqft', beds: 3, baths: 2 }];
+        const materials = [{ name: 'Premium Cement', image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop', unit: 'Per Bag', icon: '🏗️' }, { name: 'Red Bricks', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop', unit: 'Per 1000 pcs', icon: '🧱' }, { name: 'Steel Rods', image: 'https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?w=400&auto=format&fit=crop', unit: 'Per Ton', icon: '🔩' }, { name: 'River Sand', image: './images/sand.jpg', unit: 'Per CFT', icon: '⛰️' }];
+        const testimonials = [{ image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200', name: 'Ahmed Rahman', handle: '@ahmeddhaka', date: 'January 15, 2025', text: 'Found my dream apartment in Gulshan within a week! The team was incredibly helpful and professional.' }, { image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200', name: 'Fatima Khan', handle: '@fatimak', date: 'February 2, 2025', text: 'Best real estate service in Dhaka. Transparent pricing and verified properties made my decision easy.' }, { image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60', name: 'Karim Hossain', handle: '@karimh', date: 'December 20, 2024', text: 'Excellent service for building materials. Quality products at competitive prices with fast delivery.' }, { image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60', name: 'Nusrat Jahan', handle: '@nusratj', date: 'January 28, 2025', text: 'Rented a beautiful flat in Banani. The entire process was smooth and hassle-free. Highly recommended!' }];
 
-        closeMenu.addEventListener('click', () => {
-            menu.classList.remove('max-md:w-full');
-            menu.classList.add('max-md:w-0');
-            section.classList.remove('overflow-hidden');
-        });
+        function renderProperties(properties, sliderId, badge, badgeColor) { const slider = document.getElementById(sliderId); properties.forEach(prop => { const card = document.createElement('div'); card.className = 'w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex-shrink-0 snap-start'; card.innerHTML = `<div class="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"><div class="relative h-56 overflow-hidden"><img src="${prop.image}" alt="${prop.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"><div class="absolute top-4 left-4"><span class="bg-gradient-to-r ${badgeColor} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">${badge}</span></div><button class="absolute top-4 right-4 w-8 h-8 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button></div><div class="p-5"><h3 class="font-bold text-xl text-gray-900 mb-1">${prop.name}</h3><p class="text-gray-600 text-sm flex items-center gap-1 mb-3"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${prop.location}</p><div class="flex items-center justify-between text-sm text-gray-700 border-t border-gray-100 pt-4"><span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 10h8M8 14h5"/></svg>${prop.sqft}</span><span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 16h20M4 12h2M8 12h2M12 12h2M16 12h2M20 12h2"/><rect x="4" y="4" width="16" height="12" rx="2"/></svg>${prop.beds} beds</span><span class="flex items-center gap-1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 16h20M4 12h2M8 12h2M12 12h2M16 12h2M20 12h2"/><rect x="2" y="4" width="20" height="12" rx="2"/></svg>${prop.baths} baths</span></div></div></div>`; slider.appendChild(card); }); }
+        function renderMaterials() { const grid = document.getElementById('materialsGrid'); materials.forEach(material => { const card = document.createElement('div'); card.className = 'group'; card.innerHTML = `<div class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"><div class="relative h-48 overflow-hidden"><img src="${material.image}" alt="${material.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"><div class="absolute top-4 left-4 w-12 h-12 bg-white/90 backdrop-blur rounded-2xl flex items-center justify-center text-2xl">${material.icon}</div></div><div class="p-6"><h3 class="font-bold text-lg text-gray-900 mb-1">${material.name}</h3><p class="text-gray-600 text-sm mb-4">${material.unit}</p><button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-indigo-400/50 transition-all duration-300 shimmer">Order Now</button></div></div>`; grid.appendChild(card); }); }
+        function renderTestimonials() { const row1 = document.getElementById('row1'); const row2 = document.getElementById('row2'); const createCard = (testimonial) => `<div class="glass p-6 rounded-2xl mx-4 shadow-lg hover:shadow-xl transition-all duration-200 w-80 shrink-0 border border-white/50"><div class="flex gap-3 mb-4"><img class="w-12 h-12 rounded-full object-cover" src="${testimonial.image}" alt="${testimonial.name}"><div class="flex flex-col"><div class="flex items-center gap-1"><p class="font-semibold text-gray-900">${testimonial.name}</p><svg class="mt-0.5" width="16" height="16" viewBox="0 0 12 12" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.555.72a4 4 0 0 1-.297.24c-.179.12-.38.202-.59.244a4 4 0 0 1-.38.041c-.48.039-.721.058-.922.129a1.63 1.63 0 0 0-.992.992c-.071.2-.09.441-.129.922a4 4 0 0 1-.041.38 1.6 1.6 0 0 1-.245.59 3 3 0 0 1-.239.297c-.313.368-.47.551-.56.743-.213.444-.213.96 0 1.404.09.192.247.375.56.743.125.146.187.219.24.297.12.179.202.38.244.59.018.093.026.189.041.38.039.48.058.721.129.922.163.464.528.829.992.992.2.071.441.09.922.129.191.015.287.023.38.041.21.042.411.125.59.245.078.052.151.114.297.239.368.313.551.47.743.56.444.213.96.213 1.404 0 .192-.09.375-.247.743-.56.146-.125.219-.187.297-.24.179-.12.38-.202.59-.244a4 4 0 0 1 .38-.041c.48-.039.721-.058.922-.129.464-.163.829-.528.992-.992.071-.2.09-.441.129-.922a4 4 0 0 1 .041-.38c.042-.21.125-.411.245-.59.052-.078.114-.151.239-.297.313-.368.47-.551.56-.743.213-.444.213-.96 0-1.404-.09-.192-.247-.375-.56-.743a4 4 0 0 1-.24-.297 1.6 1.6 0 0 1-.244-.59 3 3 0 0 1-.041-.38c-.039-.48-.058-.721-.129-.922a1.63 1.63 0 0 0-.992-.992c-.2-.071-.441-.09-.922-.129a4 4 0 0 1-.38-.041 1.6 1.6 0 0 1-.59-.245A3 3 0 0 1 7.445.72C7.077.407 6.894.25 6.702.16a1.63 1.63 0 0 0-1.404 0c-.192.09-.375.247-.743.56m4.07 3.998a.488.488 0 0 0-.691-.69l-2.91 2.91-.958-.957a.488.488 0 0 0-.69.69l1.302 1.302c.19.191.5.191.69 0z" fill="#4F46E5"/></svg></div><span class="text-xs text-gray-500">${testimonial.handle}</span></div></div><p class="text-sm text-gray-700 mb-4 leading-relaxed">${testimonial.text}</p><div class="flex items-center justify-between text-gray-500 text-xs"><div class="flex items-center gap-1"><span>Posted on</span><a href="#" class="hover:text-indigo-600"><svg width="11" height="10" viewBox="0 0 11 10" fill="none"><path d="m.027 0 4.247 5.516L0 10h.962l3.742-3.926L7.727 10H11L6.514 4.174 10.492 0H9.53L6.084 3.616 3.3 0zM1.44.688h1.504l6.64 8.624H8.082z" fill="currentColor"/></svg></a></div><p>${testimonial.date}</p></div></div>`;[...testimonials, ...testimonials].forEach(t => { row1.insertAdjacentHTML('beforeend', createCard(t)); row2.insertAdjacentHTML('beforeend', createCard(t)); }); }
+        function initSlider(sliderId, prevBtnId, nextBtnId) { const slider = document.getElementById(sliderId); const prevBtn = document.getElementById(prevBtnId); const nextBtn = document.getElementById(nextBtnId); const scrollNext = () => { const card = slider.querySelector('.flex-shrink-0'); if (card) { const scrollAmount = card.offsetWidth + 24; slider.scrollBy({ left: scrollAmount, behavior: 'smooth' }); } }; const scrollPrev = () => { const card = slider.querySelector('.flex-shrink-0'); if (card) { const scrollAmount = card.offsetWidth + 24; slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); } }; nextBtn.addEventListener('click', scrollNext); prevBtn.addEventListener('click', scrollPrev); const checkScrollBounds = () => { if (slider.scrollLeft <= 5) prevBtn.disabled = true; else prevBtn.disabled = false; if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 5) nextBtn.disabled = true; else nextBtn.disabled = false; }; slider.addEventListener('scroll', checkScrollBounds); window.addEventListener('resize', checkScrollBounds); setTimeout(checkScrollBounds, 100); }
 
-        // ---------- PROPERTY DATA ----------
-        const saleProperties = [
-            {
-                id: 1,
-                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500&auto=format&fit=crop',
-                name: 'Lakeview Heights',
-                location: 'Gulshan, Dhaka',
-                sqft: '1850 sqft',
-                beds: 3,
-                baths: 2,
-            },
-            {
-                id: 2,
-                image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop',
-                name: 'Green Villa',
-                location: 'Dhanmondi, Dhaka',
-                sqft: '2200 sqft',
-                beds: 4,
-                baths: 3,
-            },
-            {
-                id: 3,
-                image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop',
-                name: 'Sunset Terrace',
-                location: 'Mohakhali, Dhaka',
-                sqft: '1650 sqft',
-                beds: 3,
-                baths: 2,
-            },
-            {
-                id: 4,
-                image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&auto=format&fit=crop',
-                name: 'Urban Heights',
-                location: 'Uttara, Dhaka',
-                sqft: '1950 sqft',
-                beds: 3,
-                baths: 3,
-            },
-            {
-                id: 5,
-                image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&auto=format&fit=crop',
-                name: 'Skyline Residency',
-                location: 'Banani, Dhaka',
-                sqft: '2100 sqft',
-                beds: 4,
-                baths: 3,
-            }
-        ];
-
-        const rentProperties = [
-            {
-                id: 1,
-                image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop',
-                name: 'Panorama Residence',
-                location: 'Banani, Dhaka',
-                sqft: '1350 sqft',
-                beds: 2,
-                baths: 2,
-            },
-            {
-                id: 2,
-                image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500&auto=format&fit=crop',
-                name: 'City Loft',
-                location: 'Uttara, Dhaka',
-                sqft: '980 sqft',
-                beds: 2,
-                baths: 1,
-            },
-            {
-                id: 3,
-                image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&auto=format&fit=crop',
-                name: 'Royal Garden',
-                location: 'Baridhara, Dhaka',
-                sqft: '2500 sqft',
-                beds: 4,
-                baths: 4,
-            },
-            {
-                id: 4,
-                image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&auto=format&fit=crop',
-                name: 'Modern Living',
-                location: 'Gulshan, Dhaka',
-                sqft: '1200 sqft',
-                beds: 2,
-                baths: 2,
-            },
-            {
-                id: 5,
-                image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=500&auto=format&fit=crop',
-                name: 'Lake View Apartment',
-                location: 'Dhanmondi, Dhaka',
-                sqft: '1450 sqft',
-                beds: 3,
-                baths: 2,
-            }
-        ];
-
-        // Building materials data
-        const materials = [
-            {
-                name: 'Premium Cement',
-                image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&auto=format&fit=crop',
-                unit: 'Per Bag',
-                icon: '🏗️'
-            },
-            {
-                name: 'Red Bricks',
-                image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop',
-                unit: 'Per 1000 pcs',
-                icon: '🧱'
-            },
-            {
-                name: 'Steel Rods',
-                image: 'https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?w=400&auto=format&fit=crop',
-                unit: 'Per Ton',
-                icon: '🔩'
-            },
-            {
-                name: 'River Sand',
-                image: 'https://images.unsplash.com/photo-1622548804338-fef8fbf1e6e9?w=400&auto=format&fit=crop',
-                unit: 'Per CFT',
-                icon: '⛰️'
-            }
-        ];
-
-        // Testimonials data
-        const testimonials = [
-            {
-                image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200',
-                name: 'Ahmed Rahman',
-                handle: '@ahmeddhaka',
-                date: 'January 15, 2025',
-                text: 'Found my dream apartment in Gulshan within a week! The team was incredibly helpful and professional.'
-            },
-            {
-                image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200',
-                name: 'Fatima Khan',
-                handle: '@fatimak',
-                date: 'February 2, 2025',
-                text: 'Best real estate service in Dhaka. Transparent pricing and verified properties made my decision easy.'
-            },
-            {
-                image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60',
-                name: 'Karim Hossain',
-                handle: '@karimh',
-                date: 'December 20, 2024',
-                text: 'Excellent service for building materials. Quality products at competitive prices with fast delivery.'
-            },
-            {
-                image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60',
-                name: 'Nusrat Jahan',
-                handle: '@nusratj',
-                date: 'January 28, 2025',
-                text: 'Rented a beautiful flat in Banani. The entire process was smooth and hassle-free. Highly recommended!'
-            },
-        ];
-
-        // Render properties
-        function renderProperties(properties, sliderId, badge, badgeColor) {
-            const slider = document.getElementById(sliderId);
-
-            properties.forEach(prop => {
-                const card = document.createElement('div');
-                card.className = 'w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex-shrink-0 snap-start';
-                card.innerHTML = `
-                    <div class="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="${prop.image}" alt="${prop.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4">
-                                <span class="bg-gradient-to-r ${badgeColor} text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-                                    ${badge}
-                                </span>
-                            </div>
-                            <button class="absolute top-4 right-4 w-8 h-8 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-xl text-gray-900 mb-1">${prop.name}</h3>
-                            <p class="text-gray-600 text-sm flex items-center gap-1 mb-3">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                ${prop.location}
-                            </p>
-                            <div class="flex items-center justify-between text-sm text-gray-700 border-t border-gray-100 pt-4">
-                                <span class="flex items-center gap-1">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                        <rect x="2" y="4" width="20" height="16" rx="2" />
-                                        <path d="M8 10h8M8 14h5" />
-                                    </svg>
-                                    ${prop.sqft}
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                        <path d="M2 16h20M4 12h2M8 12h2M12 12h2M16 12h2M20 12h2" />
-                                        <rect x="4" y="4" width="16" height="12" rx="2" />
-                                    </svg>
-                                    ${prop.beds} beds
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                        <path d="M2 16h20M4 12h2M8 12h2M12 12h2M16 12h2M20 12h2" />
-                                        <rect x="2" y="4" width="20" height="12" rx="2" />
-                                    </svg>
-                                    ${prop.baths} baths
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                slider.appendChild(card);
-            });
-        }
-
-        // Render materials
-        function renderMaterials() {
-            const grid = document.getElementById('materialsGrid');
-            materials.forEach(material => {
-                const card = document.createElement('div');
-                card.className = 'group';
-                card.innerHTML = `
-                    <div class="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                        <div class="relative h-48 overflow-hidden">
-                            <img src="${material.image}" alt="${material.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 w-12 h-12 bg-white/90 backdrop-blur rounded-2xl flex items-center justify-center text-2xl">
-                                ${material.icon}
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-bold text-lg text-gray-900 mb-1">${material.name}</h3>
-                            <p class="text-gray-600 text-sm mb-4">${material.unit}</p>
-                            <button class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-indigo-400/50 transition-all duration-300 shimmer">
-                                Order Now
-                            </button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // Render testimonials
-        function renderTestimonials() {
-            const row1 = document.getElementById('row1');
-            const row2 = document.getElementById('row2');
-
-            const createCard = (testimonial) => `
-                <div class="glass p-6 rounded-2xl mx-4 shadow-lg hover:shadow-xl transition-all duration-200 w-80 shrink-0 border border-white/50">
-                    <div class="flex gap-3 mb-4">
-                        <img class="w-12 h-12 rounded-full object-cover" src="${testimonial.image}" alt="${testimonial.name}">
-                        <div class="flex flex-col">
-                            <div class="flex items-center gap-1">
-                                <p class="font-semibold text-gray-900">${testimonial.name}</p>
-                                <svg class="mt-0.5" width="16" height="16" viewBox="0 0 12 12" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.555.72a4 4 0 0 1-.297.24c-.179.12-.38.202-.59.244a4 4 0 0 1-.38.041c-.48.039-.721.058-.922.129a1.63 1.63 0 0 0-.992.992c-.071.2-.09.441-.129.922a4 4 0 0 1-.041.38 1.6 1.6 0 0 1-.245.59 3 3 0 0 1-.239.297c-.313.368-.47.551-.56.743-.213.444-.213.96 0 1.404.09.192.247.375.56.743.125.146.187.219.24.297.12.179.202.38.244.59.018.093.026.189.041.38.039.48.058.721.129.922.163.464.528.829.992.992.2.071.441.09.922.129.191.015.287.023.38.041.21.042.411.125.59.245.078.052.151.114.297.239.368.313.551.47.743.56.444.213.96.213 1.404 0 .192-.09.375-.247.743-.56.146-.125.219-.187.297-.24.179-.12.38-.202.59-.244a4 4 0 0 1 .38-.041c.48-.039.721-.058.922-.129.464-.163.829-.528.992-.992.071-.2.09-.441.129-.922a4 4 0 0 1 .041-.38c.042-.21.125-.411.245-.59.052-.078.114-.151.239-.297.313-.368.47-.551.56-.743.213-.444.213-.96 0-1.404-.09-.192-.247-.375-.56-.743a4 4 0 0 1-.24-.297 1.6 1.6 0 0 1-.244-.59 3 3 0 0 1-.041-.38c-.039-.48-.058-.721-.129-.922a1.63 1.63 0 0 0-.992-.992c-.2-.071-.441-.09-.922-.129a4 4 0 0 1-.38-.041 1.6 1.6 0 0 1-.59-.245A3 3 0 0 1 7.445.72C7.077.407 6.894.25 6.702.16a1.63 1.63 0 0 0-1.404 0c-.192.09-.375.247-.743.56m4.07 3.998a.488.488 0 0 0-.691-.69l-2.91 2.91-.958-.957a.488.488 0 0 0-.69.69l1.302 1.302c.19.191.5.191.69 0z" fill="#4F46E5" />
-                                </svg>
-                            </div>
-                            <span class="text-xs text-gray-500">${testimonial.handle}</span>
-                        </div>
-                    </div>
-                    <p class="text-sm text-gray-700 mb-4 leading-relaxed">${testimonial.text}</p>
-                    <div class="flex items-center justify-between text-gray-500 text-xs">
-                        <div class="flex items-center gap-1">
-                            <span>Posted on</span>
-                            <a href="#" class="hover:text-indigo-600">
-                                <svg width="11" height="10" viewBox="0 0 11 10" fill="none">
-                                    <path d="m.027 0 4.247 5.516L0 10h.962l3.742-3.926L7.727 10H11L6.514 4.174 10.492 0H9.53L6.084 3.616 3.3 0zM1.44.688h1.504l6.64 8.624H8.082z" fill="currentColor" />
-                                </svg>
-                            </a>
-                        </div>
-                        <p>${testimonial.date}</p>
-                    </div>
-                </div>
-            `;
-
-            const doubled = [...testimonials, ...testimonials];
-            doubled.forEach(testimonial => {
-                row1.insertAdjacentHTML('beforeend', createCard(testimonial));
-                row2.insertAdjacentHTML('beforeend', createCard(testimonial));
-            });
-        }
-
-        // Slider navigation
-        function initSlider(sliderId, prevBtnId, nextBtnId) {
-            const slider = document.getElementById(sliderId);
-            const prevBtn = document.getElementById(prevBtnId);
-            const nextBtn = document.getElementById(nextBtnId);
-
-            const scrollNext = () => {
-                const card = slider.querySelector('.flex-shrink-0');
-                if (card) {
-                    const scrollAmount = card.offsetWidth + 24;
-                    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                }
-            };
-
-            const scrollPrev = () => {
-                const card = slider.querySelector('.flex-shrink-0');
-                if (card) {
-                    const scrollAmount = card.offsetWidth + 24;
-                    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                }
-            };
-
-            nextBtn.addEventListener('click', scrollNext);
-            prevBtn.addEventListener('click', scrollPrev);
-
-            const checkScrollBounds = () => {
-                if (slider.scrollLeft <= 5) {
-                    prevBtn.disabled = true;
-                } else {
-                    prevBtn.disabled = false;
-                }
-                if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth - 5) {
-                    nextBtn.disabled = true;
-                } else {
-                    nextBtn.disabled = false;
-                }
-            };
-
-            slider.addEventListener('scroll', checkScrollBounds);
-            window.addEventListener('resize', checkScrollBounds);
-            setTimeout(checkScrollBounds, 100);
-        }
-
-        // Initialize everything
         renderProperties(saleProperties, 'saleSlider', 'For Sale', 'from-green-500 to-emerald-600');
         renderProperties(rentProperties, 'rentSlider', 'For Rent', 'from-orange-500 to-red-500');
         renderMaterials();
@@ -1071,14 +567,12 @@
         initSlider('saleSlider', 'prevSale', 'nextSale');
         initSlider('rentSlider', 'prevRent', 'nextRent');
     </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
         integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"
         integrity="sha512-kz526itdNcpyMs18TLPOhsnIeOIO1JywWKbbF77zR+ZKpZ4gwubXhwaURHpt5Se9AAqSK2j8ID0LnfXsB2Jkjg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="index.js"></script>
 </body>
 
 </html>
