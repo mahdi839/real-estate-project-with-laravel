@@ -7,7 +7,7 @@
     <title>My Sweets Home · Real Estate</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-   
+
 </head>
 
 <body class="bg-gradient-to-br from-[#F5F7FF] via-[#FFFBF5] to-[#E6EFFF] overflow-x-hidden">
@@ -27,7 +27,7 @@
                 class="max-md:absolute max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-full max-md:w-0 transition-[width] glass max-md:backdrop-blur-xl flex-col md:flex-row flex gap-8 text-gray-700 text-sm font-medium">
                 <a class="hover:text-indigo-600 transition-colors" href="#">Home</a>
                 <a class="hover:text-indigo-600 transition-colors" href="#">About Us</a>
-                 <a class="hover:text-indigo-600 transition-colors" href="#">Properties</a>
+                <a class="hover:text-indigo-600 transition-colors" href="#">Properties</a>
                 <a class="hover:text-indigo-600 transition-colors" href="#">Materials</a>
                 <a class="hover:text-indigo-600 transition-colors" href="#">Sell Your Property</a>
                 <button id="closeMenu" class="md:hidden text-gray-600 hover:text-gray-900">
@@ -157,12 +157,12 @@
                         style="animation-delay:2s;"></div>
 
                     <!-- Adjusted height for mobile -->
-                    <div class="relative grid grid-cols-2 gap-4 h-[400px] sm:h-[550px]">
+                    <div class="relative grid grid-cols-2 gap-4 h-[400px] sm:h-[550px]" id="image-div">
                         <!-- Large image -->
                         <div class="col-span-1 row-span-2 float-1">
                             <div class="relative h-full group overflow-hidden rounded-3xl shadow-2xl">
                                 <img src="images/hero1.jpg"
-                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 "
                                     alt="Luxury apartment" />
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -567,12 +567,14 @@
         initSlider('saleSlider', 'prevSale', 'nextSale');
         initSlider('rentSlider', 'prevRent', 'nextRent');
     </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
         integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"
         integrity="sha512-kz526itdNcpyMs18TLPOhsnIeOIO1JywWKbbF77zR+ZKpZ4gwubXhwaURHpt5Se9AAqSK2j8ID0LnfXsB2Jkjg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

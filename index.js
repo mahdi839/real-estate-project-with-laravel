@@ -1,7 +1,7 @@
  gsap.from("header", {
-        x: 200,
+        y: -200,
         opacity: 0,
-        duration: 3,
+        duration: 2,
         delay:1
     });
 
@@ -28,4 +28,9 @@
         delay: 0.9,
         ease: "back.out(1.7)"
     });
+    gsap.from("#image-div",{
+        x:500,
+        duration:2,
+        delay:0.5
+    })
 
