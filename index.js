@@ -28,6 +28,33 @@ gsap.from(".for_rent_header h2, .for_rent_header p", {
     }
 });
 
+gsap.from(".for_sale_header h2, .for_sale_header p", {
+    x: -400,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.25,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".for_sale_header",
+        start: "top 80%",
+        toggleActions: "play reverse play reverse"
+    }
+});
+
+gsap.from(".for_material_main_div", {
+    y: -250,
+    opacity: 0,
+    duration: 1.5,
+    stagger: 0.25,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".for_material_main_div",
+        start: "top 80%",
+        toggleActions: "play reverse play reverse"
+    }
+});
+for_material_main_div
+
 // Feature 1 - from left
 gsap.from('#feature_1', {
     x: -200,
